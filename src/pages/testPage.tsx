@@ -75,8 +75,8 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 export default function App() {
   return (
     <section>
-      <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
-      <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+      <ParallaxText baseVelocity={-5}>Binky Barbie</ParallaxText>
+      <ParallaxText baseVelocity={5}>Barbie Binky</ParallaxText>
     </section>
   );
 }
