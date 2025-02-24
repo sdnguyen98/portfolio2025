@@ -2,9 +2,11 @@
 import { useState } from "react";
 import MotionWrapper from "../components/MotionWrapper";
 import { motion } from "framer-motion";
+import AnimatedSection from "../components/SectionAnimation";
 
 const Experience = () => {
     return (
+        <AnimatedSection>
         <div>      
         <h1>Experience</h1>
         <div className= "workExp">
@@ -45,7 +47,7 @@ const Experience = () => {
 
             </div>
         </div>
-    
+        </AnimatedSection>
         
 
     );
