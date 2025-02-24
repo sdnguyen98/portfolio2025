@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import About from "./pages/aboutPage";
-import Test from "./pages/testPage";
+import Experience from "./pages/Experience";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +15,7 @@ function App() {
       <About /> {/* Add About component here */}
 
       </div>
-      <Test /> {/* Add Test component here */}
+      
     </>
   )
 }
