@@ -12,7 +12,7 @@ const Home = () => {
     }>
       <div id="homeContainer">
         <a href="https://www.linkedin.com/in/stevenduynguyen/" target="_blank">
-          <img src="/images/templogo.png" className="temp logo" alt="temp logo" />
+          <img src="/images/templogo.jpg" width="300" className="temp logo" alt="temp logo" />
         </a>
       <div id= "nameTag" >
       <h1 style= {{margin: "0px"}} >Steven Nguyen</h1>

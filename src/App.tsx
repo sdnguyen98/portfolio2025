@@ -26,17 +26,20 @@ function App() {
     
       <div id= "title">
       <div>
-        {/* Show loading screen while loading is true */}
-        {loading ? <LoadingScreen /> : <Home />}
-      </div>
- 
-      <About /> {/* Add About component here */}
-      <Projects /> {/* Add Projects component here */}
-      <Experience /> {/* Add Experience component here */}
-
-      <Education /> {/* Add Education component here */}
-      <Contact /> {/* Add Contact component here */}
-
+          {/* Show loading screen while loading is true */}
+          {loading ? (
+            <LoadingScreen />
+          ) : (
+            <>
+              <Home /> {/* Add Home component here */}
+              <About /> {/* Add About component here */}
+              <Projects /> {/* Add Projects component here */}
+              <Experience /> {/* Add Experience component here */}
+              <Education /> {/* Add Education component here */}
+              <Contact /> {/* Add Contact component here */}
+            </>
+          )}
+        </div>
       </div>
       
     
