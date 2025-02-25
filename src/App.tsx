@@ -6,18 +6,30 @@ import Experience from "./pages/Experience";
 import Education from "./pages/Education";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import LoadingScreen from "./components/LoadingScreen";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Simulate loading for 2 seconds (adjust as needed)
+    const timer = setTimeout(() => {
+      setLoading(false); // Hide the loading screen after 2 seconds
+    }, 2000);
+
+    // Cleanup the timeout on component unmount
+    return () => clearTimeout(timer);
   }, []);
   
 
   return (
     
       <div id= "title">
-
-      <Home /> {/* Add Home component here */}
+      <div>
+        {/* Show loading screen while loading is true */}
+        {loading ? <LoadingScreen /> : <Home />}
+      </div>
+ 
       <About /> {/* Add About component here */}
       <Projects /> {/* Add Projects component here */}
       <Experience /> {/* Add Experience component here */}
