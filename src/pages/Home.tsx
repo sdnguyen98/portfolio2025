@@ -10,12 +10,14 @@ const Home = () => {
     <MotionWrapper onComplete={() => setShowDescription(true)
       
     }>
-      <div>
+      <div id="homeContainer">
         <a href="https://www.linkedin.com/in/stevenduynguyen/" target="_blank">
           <img src="/images/templogo.png" className="temp logo" alt="temp logo" />
         </a>
+      <div id= "nameTag" >
+      <h1 style= {{margin: "0px"}} >Steven Nguyen</h1>
       </div>
-      <h1>Steven Nguyen</h1>
+      </div>
       </MotionWrapper>
 
     

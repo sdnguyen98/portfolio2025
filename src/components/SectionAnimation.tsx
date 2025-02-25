@@ -3,14 +3,14 @@ import { useInView } from "react-intersection-observer";
 
 const SectionAnimation = ({ children }: { children: React.ReactNode }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger once when the section comes into view
-    threshold: 0.2,    // Trigger when 20% of the section is visible
+    triggerOnce: false, // Trigger once when the section comes into view
+    threshold: 0.35,    // Trigger when 20% of the section is visible
   });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}  // Initially hidden and slightly translated
+      initial={{ opacity: 0 }}  // Initially hidden and slightly translated
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
       style={{
@@ -18,6 +18,7 @@ const SectionAnimation = ({ children }: { children: React.ReactNode }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background: "red",
         borderBottom: "2px solid gray", // Optional border between sections
       }}
     >
