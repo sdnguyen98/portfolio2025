@@ -45,3 +45,43 @@
 .read-the-docs {
   color: #888;
 }
+
+.navbar {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  z-index: 1000;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  justify-content: flex-end;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  margin: 0 15px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: #f39c12; /* Hover color */
+}
+
+/* Optional: Add styles for when navbar is not visible */
+.navbar.hidden {
+  transform: translateY(-100%);
+}

@@ -18,7 +18,6 @@ const SectionAnimation = ({ children }: { children: React.ReactNode }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "red",
         borderBottom: "2px solid gray", // Optional border between sections
       }}
     >

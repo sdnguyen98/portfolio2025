@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+// App.tsx
+import { useState, useEffect } from "react";
+import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
@@ -7,43 +8,55 @@ import Education from "./pages/Education";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
+import Navbar from "./components/Navbar"; // Import Navbar
 
-function App() {
-  const [loading, setLoading] = useState(true);
+const App: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
   useEffect(() => {
-    // Simulate loading for 2 seconds (adjust as needed)
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false); // Hide the loading screen after 2 seconds
+      setLoading(false);
     }, 2000);
 
-    // Cleanup the timeout on component unmount
     return () => clearTimeout(timer);
   }, []);
-  
 
   return (
-    
-      <div id= "title">
+    <div id="title">
       <div>
-          {/* Show loading screen while loading is true */}
-          {loading ? (
-            <LoadingScreen />
-          ) : (
-            <>
-              <Home /> {/* Add Home component here */}
-              <Projects /> {/* Add Projects component here */}
-              <About /> {/* Add About component here */}
-              <Experience /> {/* Add Experience component here */}
-              <Education /> {/* Add Education component here */}
-              <Contact /> {/* Add Contact component here */}
-            </>
-          )}
-        </div>
+        {loading ? (
+          <LoadingScreen />
+        ) : (
+          <>
+            {showNavbar && <Navbar />}
+            <Home />
+            <Projects />
+            <About />
+            <Experience />
+            <Education />
+            <Contact />
+          </>
+        )}
       </div>
-      
-    
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
