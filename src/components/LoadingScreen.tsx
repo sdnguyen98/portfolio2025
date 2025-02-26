@@ -1,5 +1,5 @@
 // src/components/LoadingScreen.tsx
-import {TypingEffect} from "./typing-effect";
+import TypingEffect from "./TypingEffect";
 
 const LoadingScreen = () => {
     return (

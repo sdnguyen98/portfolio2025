@@ -1,10 +1,10 @@
-
 import * as React from 'react';
 import { motion, useInView } from 'framer-motion';
- 
-export function TypingEffect({ text = 'Typing Effect' }: { text: string }) {
+
+const TypingEffect = ({ text = 'Typing Effect' }: { text: string }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
+
   return (
     <h1
       ref={ref}
@@ -22,4 +22,6 @@ export function TypingEffect({ text = 'Typing Effect' }: { text: string }) {
       ))}
     </h1>
   );
-}
+};
+
+export default TypingEffect;

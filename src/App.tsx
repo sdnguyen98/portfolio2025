@@ -32,8 +32,8 @@ function App() {
           ) : (
             <>
               <Home /> {/* Add Home component here */}
-              <About /> {/* Add About component here */}
               <Projects /> {/* Add Projects component here */}
+              <About /> {/* Add About component here */}
               <Experience /> {/* Add Experience component here */}
               <Education /> {/* Add Education component here */}
               <Contact /> {/* Add Contact component here */}
