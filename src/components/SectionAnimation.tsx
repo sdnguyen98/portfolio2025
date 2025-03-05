@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 const SectionAnimation = ({ children }: { children: React.ReactNode }) => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Trigger once when the section comes into view
-    threshold: 0.35,    // Trigger when 20% of the section is visible
+    threshold: 0.7,    // Trigger when 20% of the section is visible
   });
 
   return (
