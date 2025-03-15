@@ -1,3 +1,9 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -111,5 +117,45 @@
 .about-image img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.project-section {
+  background-color: #d169c8;
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.projects-title {
+  text-align: center;
+  background-color: #d169c8;
+  padding: 16px;
+  text-align: center;
   border-radius: 8px;
 }
