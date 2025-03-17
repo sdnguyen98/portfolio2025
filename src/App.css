@@ -122,15 +122,15 @@ html, body, #root {
 
 .projects-container {
   display: flex;
-  flex-direction: column;
   height: 100%;
+  align-items: flex-start;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  flex-grow: 1;
+.projects-secTitle {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  font-size: 2rem;
+  text-align: left;
 }
 
 .projects-list {
@@ -141,7 +141,7 @@ html, body, #root {
 }
 
 .project-section {
-  background-color: #d169c8;
+  background-color: #f0f0f0;
   padding: 16px;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -154,8 +154,14 @@ html, body, #root {
 
 .projects-title {
   text-align: center;
-  background-color: #d169c8;
+}
+
+.project-description{
+
+  background-color: #572b2b;
   padding: 16px;
-  text-align: center;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 16px;
+  height: 20em;
 }

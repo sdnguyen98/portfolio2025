@@ -8,7 +8,12 @@ const Projects = () => {
 
   return (
     <div className="projects-container">
+      <div>
       <h1 className="projects-secTitle">projects</h1>
+      <div className="project-description">
+        <p>This is a description of the projects</p>
+      </div>
+      </div>
       <div className="projects-list">
         <div className="project-section">
           <h2 className="projects-title">project1</h2>
