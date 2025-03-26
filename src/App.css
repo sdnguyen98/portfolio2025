@@ -124,6 +124,8 @@ html, body, #root {
   display: flex;
   height: 100%;
   align-items: flex-start;
+  gap: 4em;
+  
 }
 
 .projects-secTitle {
@@ -136,12 +138,13 @@ html, body, #root {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: .5em;
+  margin-top: 4.8em;
   flex-grow: 1;
 }
 
 .project-section {
-  background-color: #f0f0f0;
+  background-color: #b458c7;
   padding: 16px;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
