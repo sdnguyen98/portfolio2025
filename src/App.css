@@ -180,14 +180,31 @@ html, body, #root {
   color: white;
   margin-top: 16px;
   height: 15em;
-  max-width: 30em;
+  width: 30em;
 
 }
 
 .project-image {
   width: 30%;
-  border-radius: 8px;
+  border-radius: 5px;
   position: absolute;
   bottom: 70%;
-  left: 70%;
+  left: 75%;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 30px; 
+  height: 30px; 
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: fade-out 0.3s forwards;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }

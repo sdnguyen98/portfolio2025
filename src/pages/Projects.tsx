@@ -8,25 +8,28 @@ const Projects = () => {
 
   // Project data
   const projectDescriptions: { [key: string]: string } = {
-    project1: "The fast, easy and free tool for making digital scrapbooking layouts",
-    project2: "Application that quizzes you on your knowledge of any Spotify playlist",
-    project3: "Need to make reservation at Oregon State University Gym",
-    project4: "Want to get the .CSV of your Age of Empire 2 Analytics",
+    project1: "Lead a team of developers to create the new engineering website for Oregon State University",
+    project2: "The fast, easy and free tool for making digital scrapbooking layouts",
+    project3: "Application that quizzes you on your knowledge of any Spotify playlist",
+    project4: "Need to make reservation at Oregon State University Gym",
+    project5: "Want to get the .CSV of your Age of Empire 2 Analytics",
   };
 
   const projectImages: { [key: string]: string } = {
-    project1: "https://placecats.com/300/200",
+    project1: "../images/osu.gif",
     project2: "https://placecats.com/300/200",
     project3: "https://placecats.com/300/200",
-    project4: "https://placecats.com/300/200",
+    project4: "../images/benny.gif",
+    project5: "../images/villager.gif",
   };
 
   // Project names
   const projectNames: { [key: string]: string } = {
-    project1: "Scrapbook Maker",
-    project2: "Spotify Quiz",
-    project3: "Gym Reservation",
-    project4: "Age of Empires Analytics Scrapper",
+    project1: "Oregon State University College of Engineering",
+    project2: "Scrapbook Maker",
+    project3: "Spotify Quiz",
+    project4: "Gym Reservation",
+    project5: "Age of Empires Analytics Scrapper",
   };
 
 

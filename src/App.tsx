@@ -39,23 +39,43 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const trail = document.createElement("img");
+      trail.className = "cursor-trail";
+      trail.src = "/images/barbie.png"; // Replace with the path to your SVG
+      trail.style.left = `${e.clientX}px`;
+      trail.style.top = `${e.clientY}px`;
+      document.body.appendChild(trail);
 
-      <div id="title">
-        {loading ? (
-          <LoadingScreen />
-        ) : (
-          <>
-            {showNavbar && <Navbar />}
-            <Home />
-            <Projects />
-            <About />
-            <Experience />
-            <Education />
-            <Contact />
-          </>
-        )}
-      </div>
+      setTimeout(() => {
+        trail.remove();
+      }, 500); // Match the animation duration
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  return (
+    <div id="title">
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          {showNavbar && <Navbar />}
+          <Home />
+          <Projects />
+          <About />
+          <Experience />
+          <Education />
+          <Contact />
+        </>
+      )}
+    </div>
   );
 };
 
