@@ -61,9 +61,9 @@ const Projects = () => {
                 alt={projectNames[projectKey]}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="project-image" // Add a class instead of inline styles
+                exit={{ scale: 0, opacity: 0 }} 
+                transition={{ type: "spring", stiffness: 300, damping: 20 }} //type: "spring",bounce: 0.4, duration: 0.8
+                className="project-image"
               />
             )}
           </div>
