@@ -1,55 +1,73 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-import ProjectCard from "../components/ProjectCard"; // Import the ProjectCard component
-
-// Project Data
-const projectInfo = [
-  { id: 1, title: "Project A", description: "React + Vite App", image: "https://placecats.com/300/200" },
-  { id: 2, title: "Project B", description: "Full-Stack Web App", image: "https://placecats.com/300/200" },
-  { id: 3, title: "Project C", description: "Machine Learning Model", image: "https://placecats.com/300/200" },
-  { id: 4, title: "Project D", description: "E-commerce Platform", image: "https://placecats.com/300/200" },
-];
+import AnimatedBackground from "./components/animatedBackground";
 
 const Projects = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
+  const [selectedProject, setSelectedProject] = useState<string>("");
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null); // Track hovered project
 
-  // Scroll-triggered animation for the h1 element
-  const xTransform = useTransform(scrollYProgress, [0, 0.2], ["0vw", "-30vw"]); // Move left as you scroll
-  const opacityTransform = useTransform(scrollYProgress, [0.8, 1], [1, 0]); // Fade out as you scroll past 80%
+  // Project data
+  const projectDescriptions: { [key: string]: string } = {
+    project1: "Lead a team of developers to create the new engineering website for Oregon State University",
+    project2: "The fast, easy and free tool for making digital scrapbooking layouts",
+    project3: "Application that quizzes you on your knowledge of any Spotify playlist",
+    project4: "Need to make reservation at Oregon State University Gym",
+    project5: "Want to get the .CSV of your Age of Empire 2 Analytics",
+  };
+
+  const projectImages: { [key: string]: string } = {
+    project1: "../images/osu.gif",
+    project2: "https://placecats.com/300/200",
+    project3: "https://placecats.com/300/200",
+    project4: "../images/benny.gif",
+    project5: "../images/villager.gif",
+  };
+
+  // Project names
+  const projectNames: { [key: string]: string } = {
+    project1: "Oregon State University College of Engineering",
+    project2: "Scrapbook Maker",
+    project3: "Spotify Quiz",
+    project4: "Gym Reservation",
+    project5: "Age of Empires Analytics Scrapper",
+  };
+
 
   return (
-    <div>
-      {/* Use motion.div to animate the project title */}
-      <motion.div
-        id="projectTitle"
-        style={{
-          fontSize: "30px",
-          position: "sticky",
-          top: "0",
-          zIndex: "10",
-          x: xTransform, // Bind the x-axis transform
-          opacity: opacityTransform, // Bind the opacity transform
-        }}
-      >
-        <h1>Projects</h1>
-      </motion.div>
-      
-      {/* Project Cards */}
-      <div ref={ref} style={{ minHeight: "500vh", position: "relative" }}>
-        <div style={{ position: "sticky", top: "10vh", height: "80vh", display: "flex", justifyContent: "flex-start" }}>
-          {projectInfo.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-              scrollYProgress={scrollYProgress} // Pass the scroll progress to ProjectCard
-            />
-          ))}
+    <div className="projects-container">
+      <div>
+        <h1 className="projects-secTitle">Projects</h1>
+        <div className="project-description">
+          <p>
+            {selectedProject
+              ? projectDescriptions[selectedProject]
+              : "Select a project to learn more."}
+          </p>
         </div>
+      </div>
+      <div className="projects-list">
+        {Object.keys(projectNames).map((projectKey) => (
+          <div
+            key={projectKey}
+            className="project-section"
+            onClick={() => setSelectedProject(projectKey)}
+            onMouseEnter={() => setHoveredProject(projectKey)} // Set hovered project
+            onMouseLeave={() => setHoveredProject(null)} // Clear hovered project
+          >
+            <h2 className="projects-title">{projectNames[projectKey]}</h2>
+            {hoveredProject === projectKey && ( // Show image only when hovered
+              <motion.img
+                src={projectImages[projectKey]}
+                alt={projectNames[projectKey]}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="project-image" // Add a class instead of inline styles
+              />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

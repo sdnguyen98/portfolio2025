@@ -5,6 +5,7 @@ import AnimatedSection from "../components/SectionAnimation";
 
 const About = () => {
     return (
+        
         <AnimatedSection>
             <div className="about-container">
                 <h1 className="about-title">About</h1>
