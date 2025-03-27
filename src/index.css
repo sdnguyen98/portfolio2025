@@ -3,10 +3,10 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  background-image: url("/images/gradient-chrome.jpg");
   background-color: #242424;
 
   font-synthesis: none;
@@ -37,7 +37,7 @@ h1 {
   line-height: 1.1;
 }
 #homeContainer{
-  margin-top: 100px;
+  margin-top: 6.25em;
 }
 
 button {

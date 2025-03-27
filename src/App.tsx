@@ -1,6 +1,7 @@
 // App.tsx
 import { useState, useEffect } from "react";
 import "./App.css";
+import AnimatedBackground from "./components/animatedBackground";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
@@ -39,8 +40,8 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div id="title">
-      <div>
+
+      <div id="title">
         {loading ? (
           <LoadingScreen />
         ) : (
@@ -55,7 +56,6 @@ const App: React.FC = () => {
           </>
         )}
       </div>
-    </div>
   );
 };
 

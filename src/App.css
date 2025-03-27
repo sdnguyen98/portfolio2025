@@ -1,7 +1,12 @@
-html, body, #root {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+
 }
 
 #root {
@@ -139,18 +144,21 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   gap: .5em;
-  margin-top: 4.8em;
+  margin-top: 2.8em;
   flex-grow: 1;
 }
 
 .project-section {
-  background-color: #b458c7;
-  padding: 16px;
+  position:relative;
+  background-color: #333333;
+  opacity: 0.7;
+  padding: 1.7em;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-section:hover {
+  color: red;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -160,11 +168,26 @@ html, body, #root {
 }
 
 .project-description{
-
-  background-color: #572b2b;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  border-radius: 10px; 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(95, 78, 78, 0.2); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  transition: all 0.3s ease;
+  word-wrap: break-word;
+  color: white;
   margin-top: 16px;
-  height: 20em;
+  height: 15em;
+  max-width: 30em;
+
+}
+
+.project-image {
+  width: 30%;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 70%;
+  left: 70%;
 }
