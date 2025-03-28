@@ -1,26 +1,15 @@
-import { useState } from "react";
-import MotionWrapper from "../components/MotionWrapper";
-import { motion } from "framer-motion";
-
-
 const Home = () => {
-  const [showDescription, setShowDescription] = useState(false);
-
   return (
-    <MotionWrapper onComplete={() => setShowDescription(true)
+    <div id="homeContainer">
+      <a href="https://www.linkedin.com/in/stevenduynguyen/" target="_blank" rel="noopener noreferrer">
+        <img src="/images/templogo.jpg" width="300" className="temp logo" alt="temp logo" />
+      </a>
+      <div id="nameTag">
+        <h1>Steven Nguyen</h1>
+        <div id="description"><h2>Software Developer</h2></div>
+      </div>
       
-    }>
-      <div id="homeContainer">
-        <a href="https://www.linkedin.com/in/stevenduynguyen/" target="_blank">
-          <img src="/images/templogo.jpg" width="300" className="temp logo" alt="temp logo" />
-        </a>
-      <div id= "nameTag" >
-      <h1 style= {{margin: "0px"}} >Steven Nguyen</h1>
-      </div>
-      </div>
-      </MotionWrapper>
-
-    
+    </div>
   );
 };
 
