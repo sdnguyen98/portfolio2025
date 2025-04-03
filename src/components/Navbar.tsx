@@ -17,17 +17,15 @@ const Navbar: React.FC = () => {
         {isVisible && (
           <motion.ul
             initial={{ y: 0, scale: 1 }}
-            animate={{ y: 50, scale: 1 }}
+            animate={{ y: 30, scale: 1 }}
             exit={{ y: 0}}
             transition={{ duration: 0.2 }}
             className="navbar"
           >
-            <li className="navbar-item"><a href="/">Home</a></li>
-            <li className="navbar-item"><a href="projects">Projects</a></li>
-            <li className="navbar-item"><a href="about">About</a></li>
-            <li className="navbar-item"><a href="experience">Experience</a></li>
-            <li className="navbar-item"><a href="education">Education</a></li>
-            <li className="navbar-item"><a href="contact">Contact</a></li>
+          <a href="/" className="nav-link">Home</a>
+          <a href="/about" className="nav-link">About</a>
+          <a href="/projects" className="nav-link">Projects</a>
+          <a href="/contact" className="nav-link">Contact</a>
           </motion.ul>
         )}
       </AnimatePresence>
