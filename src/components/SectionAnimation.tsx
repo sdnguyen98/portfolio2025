@@ -21,6 +21,7 @@ const SectionAnimation = ({ children }: { children: React.ReactNode }) => {
         borderBottom: "2px solid gray", // Optional border between sections
       }}
     >
+      
       {children}
     </motion.div>
   );

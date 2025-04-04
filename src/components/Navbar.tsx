@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
             initial={{ y: 0, scale: 1 }}
             animate={{ y: 30, scale: 1 }}
             exit={{ y: 0}}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2, ease: "easeInOut"}}
             className="navbar"
           >
           <a href="/" className="nav-link">Home</a>
