@@ -13,7 +13,20 @@ import Navbar from "./components/Navbar";
 import PageTransition from "./components/PageTransition";
 
 const App: React.FC = () => {
-  
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleHomeLoad = async () => {
+    setIsLoading(true);
+    // Simulate a delay for loading (e.g., fetching data)
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      handleHomeLoad();
+    }
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -38,60 +51,61 @@ const App: React.FC = () => {
 
   return (
     <div id="title">
-        <Router>
-          <Navbar />
-          <Routes>
-            {/* Add a wrapper for route transitions */}
-            <Route
-              path="/"
-              element={
-                <PageTransition>
-                  <Home />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <PageTransition>
-                  <Projects />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <PageTransition>
-                  <About />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/experience"
-              element={
-                <PageTransition>
-                  <Experience />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/education"
-              element={
-                <PageTransition>
-                  <Education />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <PageTransition>
-                  <Contact />
-                </PageTransition>
-              }
-            />
-          </Routes>
-        </Router>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              isLoading ? (
+                <LoadingScreen />
+              ) : (
+                <Home />
+              )
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <PageTransition>
+                <Projects />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <PageTransition>
+                <About />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/experience"
+            element={
+              <PageTransition>
+                <Experience />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/education"
+            element={
+              <PageTransition>
+                <Education />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <PageTransition>
+                <Contact />
+              </PageTransition>
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 };
