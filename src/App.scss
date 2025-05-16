@@ -1,3 +1,4 @@
+@import "tailwindcss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -154,35 +155,6 @@ html, body, #root {
   }
 }
 
-/* About Section Styles */
-.about-container {
-  padding: 2rem;
-  text-align: left;
-
-  .about-title {
-    text-align: left;
-    font-size: 3.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .about-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
-    .about-text {
-      flex: 1;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    .about-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  }
-}
 
 .projects-container {
   margin-top: 10em;
