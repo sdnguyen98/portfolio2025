@@ -1,7 +1,8 @@
 // App.tsx
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.scss"; // Updated from App.css to App.scss
+import "./App.css";
+import "./global.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Experience from "./pages/Experience";

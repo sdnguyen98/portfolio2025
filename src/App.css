@@ -1,0 +1,229 @@
+
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+#homeContainer {
+  margin: 0;
+  z-index: 3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#nameTag {
+  position: absolute;
+  font-size: 40px;
+  min-height: 50vh;
+  pointer-events: none;
+  top: 15.1em;
+  z-index: 2;
+}
+#nameTag #description {
+  text-align: left;
+  font-family: "Cantata One", serif;
+  font-size: 0.8em;
+}
+#nameTag h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-family: "Cantata One", serif;
+  font-weight: 400;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.background-image {
+  pointer-events: none;
+  position: absolute;
+  top: 11em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.navbar-button {
+  position: fixed;
+  display: flex;
+  border-radius: 40%;
+  top: 1em;
+  right: 1em;
+  background-color: rgba(22, 22, 22, 0.548);
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  padding: 0.7em;
+  justify-content: flex-end;
+}
+
+.navbar {
+  display: flex;
+  height: 100vh;
+  width: 24em;
+  background-color: rgba(41, 41, 41, 0.836);
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: #fff;
+  flex-direction: column;
+  padding: 4.65em;
+  z-index: 1000;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+.navbar .nav-link {
+  text-align: left;
+  color: white;
+  display: inline-block;
+  font-size: 40px;
+  gap: 12px;
+  margin-top: 2.1em;
+  margin-left: 2.8em;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  z-index: 1001;
+}
+.navbar .nav-link::after,
+.navbar .nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, rgb(75, 75, 75));
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+.navbar .nav-link::before {
+  top: -5px;
+  transform-origin: left;
+}
+.navbar .nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+.projects-container {
+  margin-top: 10em;
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  gap: 4em;
+}
+.projects-container .projects-secTitle {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  font-size: 2rem;
+  text-align: left;
+}
+.projects-container .projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-top: 2.8em;
+  flex-grow: 1;
+}
+.projects-container .project-section {
+  position: relative;
+  background-color: #333333;
+  opacity: 0.7;
+  padding: 1.7em;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.projects-container .project-section:hover {
+  color: red;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.projects-container .projects-title {
+  text-align: center;
+}
+.projects-container .project-description {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(95, 78, 78, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: all 0.3s ease;
+  word-wrap: break-word;
+  color: white;
+  margin-top: 16px;
+  height: 15em;
+  width: 30em;
+}
+.projects-container .project-image {
+  width: 40%;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 70%;
+  left: 75%;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: fade-out 0.3s forwards;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.scene-container {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
