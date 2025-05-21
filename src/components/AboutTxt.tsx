@@ -10,7 +10,7 @@ const AboutTxt = () => {
 
     </div>
           <img
-          src="/images/newtemp.png"
+          src="media/newtemp.png"
           width="400"
           className="background-image"
           alt="temp logo"

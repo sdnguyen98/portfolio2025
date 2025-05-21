@@ -1,6 +1,26 @@
 import { useRef, useState } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import AnimatedBackground from "./components/animatedBackground";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<string>("");
@@ -16,11 +36,11 @@ const Projects = () => {
   };
 
   const projectImages: { [key: string]: string } = {
-    project1: "../images/osu.gif",
+    project1: "../media/osu.gif",
     project2: "https://placecats.com/300/200",
     project3: "https://placecats.com/300/200",
-    project4: "../images/benny.gif",
-    project5: "../images/villager.gif",
+    project4: "../media/benny.gif",
+    project5: "../media/villager.gif",
   };
 
   // Project names
@@ -32,43 +52,73 @@ const Projects = () => {
     project5: "Age of Empires Analytics Scrapper",
   };
 
-
   return (
     <div className="projects-container">
-      <div>
-        <h1 className="projects-secTitle">Projects</h1>
-        <div className="project-description">
-          <p>
-            {selectedProject
-              ? projectDescriptions[selectedProject]
-              : "Select a project to learn more."}
-          </p>
-        </div>
-      </div>
-      <div className="projects-list">
-        {Object.keys(projectNames).map((projectKey) => (
-          <div
-            key={projectKey}
-            className="project-section"
-            onClick={() => setSelectedProject(projectKey)}
-            onMouseEnter={() => setHoveredProject(projectKey)} // Set hovered project
-            onMouseLeave={() => setHoveredProject(null)} // Clear hovered project
-          >
-            <h2 className="projects-title">{projectNames[projectKey]}</h2>
-            {hoveredProject === projectKey && ( // Show image only when hovered
-              <motion.img
-                src={projectImages[projectKey]}
-                alt={projectNames[projectKey]}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="project-image" // Add a class instead of inline styles
-              />
-            )}
-          </div>
-        ))}
-      </div>
+      <a id="Projects"></a>
+      <h1 className="text-5xl">Projects</h1>
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <Card>
+            <HoverCard>
+              <HoverCardTrigger>
+                <CardContent>
+                  <AccordionTrigger><h2>Oregon State University College of Engineering Websites</h2></AccordionTrigger>
+                  <AccordionContent className="text-left relative">
+                    <p className="pb-5">Lead a team of developers to create the new engineering website for Oregon State University </p>
+                    <a href="https://engineering.oregonstate.edu/" target="_blank" className="absolute bottom-0 left-0 font-bold text-white">
+                      [Website]
+                    </a>
+                  </AccordionContent>
+                </CardContent>
+              </HoverCardTrigger>
+              <HoverCardContent>
+              <img
+                        src="../media/osu.gif"
+                        alt="Placeholder Image"
+                        className="w-full h-full object-cover rounded-lg"
+
+                    />
+              </HoverCardContent>
+            </HoverCard>
+          </Card>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <Card>
+            <CardContent>
+              <AccordionTrigger>Scrapbook Maker</AccordionTrigger>
+              <AccordionContent className="text-left">The fast, easy and free tool for making digital scrapbooking layouts
+              </AccordionContent>
+            </CardContent>
+          </Card>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <Card>
+            <CardContent>
+              <AccordionTrigger>Spotify Quiz</AccordionTrigger>
+              <AccordionContent className="text-left">Application that quizzes you on your knowledge of any Spotify playlist
+              </AccordionContent>
+            </CardContent>
+          </Card>
+        </AccordionItem>
+        <AccordionItem value="item-4">
+          <Card>
+            <CardContent>
+              <AccordionTrigger>Gym Reservation</AccordionTrigger>
+              <AccordionContent className="text-left">Need to make reservation at Oregon State University Gym
+              </AccordionContent>
+            </CardContent>
+          </Card>
+        </AccordionItem>
+        <AccordionItem value="item-5">
+          <Card>
+            <CardContent>
+              <AccordionTrigger>Age of Empires Analytics Scrapper</AccordionTrigger>
+              <AccordionContent className="text-left">Want to get the .CSV of your Age of Empire 2 Analytics
+              </AccordionContent>
+            </CardContent>
+          </Card>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 };

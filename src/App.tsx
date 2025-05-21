@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import PageTransition from "./components/PageTransition";
+import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,26 +30,6 @@ const App: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const trail = document.createElement("img");
-      trail.className = "cursor-trail";
-      trail.src = "/images/barbie.png";
-      trail.style.left = `${e.clientX}px`;
-      trail.style.top = `${e.clientY}px`;
-      document.body.appendChild(trail);
-
-      setTimeout(() => {
-        trail.remove();
-      }, 500);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <div id="title">
@@ -82,26 +63,10 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="/experience"
+            path="*"
             element={
               <PageTransition>
-                <Experience />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/education"
-            element={
-              <PageTransition>
-                <Education />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <PageTransition>
-                <Contact />
+                <NotFound />
               </PageTransition>
             }
           />

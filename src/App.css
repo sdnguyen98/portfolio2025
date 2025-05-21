@@ -143,56 +143,7 @@ html, body, #root {
   align-items: flex-start;
   gap: 4em;
 }
-.projects-container .projects-secTitle {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  font-size: 2rem;
-  text-align: left;
-}
-.projects-container .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2em;
-  margin-top: 2.8em;
-  flex-grow: 1;
-}
-.projects-container .project-section {
-  position: relative;
-  background-color: #333333;
-  opacity: 0.7;
-  padding: 1.7em;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.projects-container .project-section:hover {
-  color: red;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.projects-container .projects-title {
-  text-align: center;
-}
-.projects-container .project-description {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(95, 78, 78, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  transition: all 0.3s ease;
-  word-wrap: break-word;
-  color: white;
-  margin-top: 16px;
-  height: 15em;
-  width: 30em;
-}
-.projects-container .project-image {
-  width: 40%;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 70%;
-  left: 75%;
-}
+
 
 .cursor-trail {
   position: fixed;
