@@ -33,8 +33,8 @@ const About = () => {
                 </div>
                 
                 <div className="text-left">
-                    <h2 className="text-[3.2rem] mb-4">About Me</h2>
-                    <p className="text-[1.2rem] leading-[1.6]">
+                    <h2 className="text-[3.2rem] text-shadow-lg mb-4">About Me</h2>
+                    <p className="text-[1.2rem] leading-[1.6] text-shadow-lg">
                         Hello my name is Steven Nguyen I'm a Software Developer with hands-on experience building and maintaining web applications, digital platforms, and automated solutions.
                         Adept at translating complex requirements into scalable, maintainable code. Known for strong team leadership, Agile collaboration,
                         and a focus on performance, accessibility, and end-user experience
