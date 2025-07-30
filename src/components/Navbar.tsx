@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
           >
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About" />
-            <NavLink href="/projects" label="Projects" />
+            <NavLink href="/about#Projects" label="Projects" />
             <NavLink 
               href="/media/resume.pdf" 
               label="Resume" 
