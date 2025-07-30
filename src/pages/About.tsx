@@ -27,7 +27,6 @@ const About = () => {
             <Techncert />
             <ExperienceTabs />
             <AppleCardsCarousel />            
-            <Projects />
         </div>
         
 

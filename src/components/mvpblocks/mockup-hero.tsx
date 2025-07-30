@@ -107,9 +107,6 @@ export default function LucyHero() {
                Hello my name is <GradientText>Steven Nguyen</GradientText> I'm a Software Developer with hands-on experience building and maintaining web applications, digital platforms, and automated solutions.
                Adept at translating complex requirements into scalable, maintainable code. Known for strong team leadership, Agile collaboration,
                and a focus on performance, accessibility, and end-user experience
-              <span className="text-foreground font-semibold">
-                Endless potential.
-              </span>
             </motion.p>
 
             <motion.div
