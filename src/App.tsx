@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
 
   return (
-    <div id="title">
+    <div id="app-container">
       <Router>
         <Navbar />
         <Routes>
