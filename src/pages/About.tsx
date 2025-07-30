@@ -3,6 +3,7 @@ import MotionWrapper from "../components/MotionWrapper";
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/SectionAnimation";
 import ExperienceTabs from "../components/about/experienceTabs";
+import LucyHero from "../components/mvpblocks/mockup-hero";
 import Projects from "./Projects";
 
 import {
@@ -19,31 +20,9 @@ const About = () => {
     return (
 
         // <AnimatedSection>
+
         <div className="p-8">
-            
-            <div className="flex items-center gap-8">
-                {/* Text on the left */}
-                               <div className="w-1/5 rounded-lg border-4 flex-shrink-0">
-                    <img
-                        src="media/steven_icon.jpg"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
-                </div>
-                
-                <div className="text-left">
-                    <h2 className="text-[3.2rem] text-shadow-lg mb-4">About Me</h2>
-                    <p className="text-[1.2rem] leading-[1.6] text-shadow-lg">
-                        Hello my name is Steven Nguyen I'm a Software Developer with hands-on experience building and maintaining web applications, digital platforms, and automated solutions.
-                        Adept at translating complex requirements into scalable, maintainable code. Known for strong team leadership, Agile collaboration,
-                        and a focus on performance, accessibility, and end-user experience
-                    </p>
-                </div>
-
-                {/* Image on the right */}
- 
-            </div>
+            <LucyHero />
             <ExperienceTabs />
             <Projects />
         </div>
