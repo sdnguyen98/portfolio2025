@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import TypingEffect from "./TypingEffect";
 
-const LoadingScreen = ({ isVisible }: { isVisible: boolean }) => {
+const LoadingScreen = () => {
   const greeting = [
     "Hello",
     "Hola",
@@ -21,28 +21,18 @@ const LoadingScreen = ({ isVisible }: { isVisible: boolean }) => {
     "Xin chào",
   ];
   const randomGreeting = greeting[Math.floor(Math.random() * greeting.length)];
+
   return (
     <motion.div
-      style={styles.loadingContainer}
+      className="fixed inset-0 w-screen h-screen flex items-center justify-center text-6xl text-white bg-black z-[9999]"
       initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 2.5 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <TypingEffect text={randomGreeting} />
     </motion.div>
   );
-};
-
-const styles = {
-  loadingContainer: {
-    height: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "60px",
-    color: "white",
-  },
 };
 
 export default LoadingScreen;

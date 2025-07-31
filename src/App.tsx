@@ -1,6 +1,7 @@
 // App.tsx
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import "./App.css";
 import "./global.css";
 import Home from "./pages/Home";
@@ -15,10 +16,9 @@ import PageTransition from "./components/PageTransition";
 import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleHomeLoad = async () => {
-    setIsLoading(true);
     // Simulate a delay for loading (e.g., fetching data)
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsLoading(false);
@@ -27,6 +27,8 @@ const App: React.FC = () => {
   useEffect(() => {
     if (window.location.pathname === "/") {
       handleHomeLoad();
+    } else {
+      setIsLoading(false);
     }
   }, []);
 
@@ -34,33 +36,39 @@ const App: React.FC = () => {
     <div id="app-container">
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={isLoading ? <LoadingScreen /> : <Home />} />
-          <Route
-            path="/projects"
-            element={
-              <PageTransition>
-                <Projects />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PageTransition>
-                <About />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <PageTransition>
-                <NotFound />
-              </PageTransition>
-            }
-          />
-        </Routes>
+        <AnimatePresence mode="wait">
+          {isLoading && window.location.pathname === "/" ? (
+            <LoadingScreen key="loading" />
+          ) : (
+            <Routes key="routes">
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/projects"
+                element={
+                  <PageTransition>
+                    <Projects />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <PageTransition>
+                    <About />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <PageTransition>
+                    <NotFound />
+                  </PageTransition>
+                }
+              />
+            </Routes>
+          )}
+        </AnimatePresence>
       </Router>
     </div>
   );
