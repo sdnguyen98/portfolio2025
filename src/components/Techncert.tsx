@@ -47,15 +47,15 @@ const Techncert: React.FC = () => {
   return (
     <section className="w-full max-w-[1200px] mx-auto px-4 py-12 md:py-16">
       {/* Section title */}
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center text-foreground">
         Skills & Certifications
       </h2>
 
       {/* Grid container for side-by-side layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
         {/* Tech Stack Card */}
-        <Card className="border border-gray-200 dark:border-gray-800">
-          <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-gray-200 dark:border-gray-800">
+        <Card className="border border-border">
+          <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-border">
             Tech Stack
           </CardTitle>
           <CardContent className="p-6 md:p-8">
@@ -64,7 +64,7 @@ const Techncert: React.FC = () => {
                 <motion.div
                   key={skill.name}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-black/5 dark:bg-white/5 backdrop-blur-sm text-foreground px-4 py-2 rounded-full text-center text-sm md:text-base font-medium border border-gray-200/20 dark:border-gray-700/20 shadow-sm"
+                  className="bg-background/20 backdrop-blur-sm text-foreground px-4 py-2 rounded-full text-center text-sm md:text-base font-medium border border-border shadow-sm"
                 >
                   {skill.name}
                 </motion.div>
@@ -74,8 +74,8 @@ const Techncert: React.FC = () => {
         </Card>
 
         {/* Certifications Card */}
-        <Card className="border border-gray-200 dark:border-gray-800">
-          <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-gray-200 dark:border-gray-800">
+        <Card className="border border-border">
+          <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-border">
             Certifications
           </CardTitle>
           <CardContent className="p-6 md:p-8">
@@ -84,7 +84,7 @@ const Techncert: React.FC = () => {
                 <motion.li
                   key={cert.title}
                   whileHover={{ x: 5 }}
-                  className="bg-black/5 dark:bg-white/5 backdrop-blur-sm rounded-lg p-5 border border-gray-200/20 dark:border-gray-700/20"
+                  className="bg-background/20 backdrop-blur-sm rounded-lg p-5 border border-border"
                 >
                   <span className="block font-semibold text-foreground text-lg">{cert.title}</span>
                   <span className="text-muted-foreground">
