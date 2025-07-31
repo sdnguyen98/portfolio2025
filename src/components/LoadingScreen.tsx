@@ -24,10 +24,10 @@ const LoadingScreen = ({ isVisible }: { isVisible: boolean }) => {
   return (
     <motion.div
       style={styles.loadingContainer}
-      initial={{ opacity: 1 }} 
-      animate={{ opacity: isVisible ? 1 : 0 }} 
-      exit={{ opacity: 0 }} 
-      transition={{ duration: 2.5 }} 
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2.5 }}
     >
       <TypingEffect text={randomGreeting} />
     </motion.div>
@@ -36,7 +36,7 @@ const LoadingScreen = ({ isVisible }: { isVisible: boolean }) => {
 
 const styles = {
   loadingContainer: {
-    height: "100vh", 
+    height: "100vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -14,12 +14,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import React from "react";
 
 const Projects = () => {
@@ -55,10 +51,19 @@ const Projects = () => {
                 style={{ width: "100%" }}
               >
                 <CardContent>
-                  <AccordionTrigger><h2>Oregon State University College of Engineering Websites</h2></AccordionTrigger>
+                  <AccordionTrigger>
+                    <h2>Oregon State University College of Engineering Websites</h2>
+                  </AccordionTrigger>
                   <AccordionContent className="text-left relative">
-                    <p className="pb-5">Lead a team of developers to create the new engineering website for Oregon State University </p>
-                    <a href="https://engineering.oregonstate.edu/" target="_blank" className="absolute bottom-0 left-0 font-bold text-white">
+                    <p className="pb-5">
+                      Lead a team of developers to create the new engineering website for Oregon
+                      State University{" "}
+                    </p>
+                    <a
+                      href="https://engineering.oregonstate.edu/"
+                      target="_blank"
+                      className="absolute bottom-0 left-0 font-bold text-white"
+                    >
                       [Website]
                     </a>
                   </AccordionContent>
@@ -78,30 +83,30 @@ const Projects = () => {
                     : { display: "none" }
                 }
               >
-              <img
-                        src="../media/osu.gif"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
+                <img
+                  src="../media/osu.gif"
+                  alt="Placeholder Image"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           </Card>
         </AccordionItem>
         <AccordionItem value="item-2">
           <Card>
-          <HoverCard>
-          <HoverCardTrigger
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ width: "100%" }}
-          >
-            <CardContent>
-              <AccordionTrigger>Scrapbook Maker</AccordionTrigger>
-              <AccordionContent className="text-left">The fast, easy and free tool for making digital scrapbooking layouts
-              </AccordionContent>
-            </CardContent>
-            </HoverCardTrigger>
+            <HoverCard>
+              <HoverCardTrigger
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ width: "100%" }}
+              >
+                <CardContent>
+                  <AccordionTrigger>Scrapbook Maker</AccordionTrigger>
+                  <AccordionContent className="text-left">
+                    The fast, easy and free tool for making digital scrapbooking layouts
+                  </AccordionContent>
+                </CardContent>
+              </HoverCardTrigger>
               <HoverCardContent
                 style={
                   hoverPos
@@ -116,30 +121,30 @@ const Projects = () => {
                     : { display: "none" }
                 }
               >
-              <img
-                        src="../media/villager.gif"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
+                <img
+                  src="../media/villager.gif"
+                  alt="Placeholder Image"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           </Card>
         </AccordionItem>
         <AccordionItem value="item-3">
           <Card>
-          <HoverCard>
-          <HoverCardTrigger
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ width: "100%" }}
-          >
-            <CardContent>
-              <AccordionTrigger>Spotify Quiz</AccordionTrigger>
-              <AccordionContent className="text-left">Application that quizzes you on your knowledge of any Spotify playlist
-              </AccordionContent>
-            </CardContent>
-            </HoverCardTrigger>
+            <HoverCard>
+              <HoverCardTrigger
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ width: "100%" }}
+              >
+                <CardContent>
+                  <AccordionTrigger>Spotify Quiz</AccordionTrigger>
+                  <AccordionContent className="text-left">
+                    Application that quizzes you on your knowledge of any Spotify playlist
+                  </AccordionContent>
+                </CardContent>
+              </HoverCardTrigger>
               <HoverCardContent
                 style={
                   hoverPos
@@ -154,30 +159,30 @@ const Projects = () => {
                     : { display: "none" }
                 }
               >
-              <img
-                        src="../media/villager.gif"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
+                <img
+                  src="../media/villager.gif"
+                  alt="Placeholder Image"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           </Card>
         </AccordionItem>
         <AccordionItem value="item-4">
           <Card>
-          <HoverCard>
-          <HoverCardTrigger
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ width: "100%" }}
-          >
-            <CardContent>
-              <AccordionTrigger>Gym Reservation</AccordionTrigger>
-              <AccordionContent className="text-left">Need to make reservation at Oregon State University Gym
-              </AccordionContent>
-            </CardContent>
-            </HoverCardTrigger>
+            <HoverCard>
+              <HoverCardTrigger
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ width: "100%" }}
+              >
+                <CardContent>
+                  <AccordionTrigger>Gym Reservation</AccordionTrigger>
+                  <AccordionContent className="text-left">
+                    Need to make reservation at Oregon State University Gym
+                  </AccordionContent>
+                </CardContent>
+              </HoverCardTrigger>
               <HoverCardContent
                 style={
                   hoverPos
@@ -192,30 +197,30 @@ const Projects = () => {
                     : { display: "none" }
                 }
               >
-              <img
-                        src="../media/villager.gif"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
+                <img
+                  src="../media/villager.gif"
+                  alt="Placeholder Image"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           </Card>
         </AccordionItem>
         <AccordionItem value="item-5">
           <Card>
-          <HoverCard>
-          <HoverCardTrigger
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ width: "100%" }}
-          >
-            <CardContent>
-              <AccordionTrigger>Age of Empires Analytics Scrapper</AccordionTrigger>
-              <AccordionContent className="text-left">Want to get the .CSV of your Age of Empire 2 Analytics
-              </AccordionContent>
-            </CardContent>
-            </HoverCardTrigger>
+            <HoverCard>
+              <HoverCardTrigger
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ width: "100%" }}
+              >
+                <CardContent>
+                  <AccordionTrigger>Age of Empires Analytics Scrapper</AccordionTrigger>
+                  <AccordionContent className="text-left">
+                    Want to get the .CSV of your Age of Empire 2 Analytics
+                  </AccordionContent>
+                </CardContent>
+              </HoverCardTrigger>
               <HoverCardContent
                 style={
                   hoverPos
@@ -230,12 +235,11 @@ const Projects = () => {
                     : { display: "none" }
                 }
               >
-              <img
-                        src="../media/villager.gif"
-                        alt="Placeholder Image"
-                        className="w-full h-full object-cover rounded-lg"
-
-                    />
+                <img
+                  src="../media/villager.gif"
+                  alt="Placeholder Image"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           </Card>

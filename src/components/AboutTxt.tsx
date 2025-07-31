@@ -7,7 +7,7 @@ const AboutTxt = () => {
         className="absolute pointer-events-none z-10 top-24 sm:top-32 md:top-44 left-1/2 transform -translate-x-1/2 w-[80%] max-w-[300px] md:max-w-[400px]"
         alt="temp logo"
       />
-      
+
       {/* Name tag below image */}
       <div className="absolute pointer-events-none z-20 text-center md:text-left top-[50%] md:top-[60%] w-full px-4 md:px-0 md:w-auto">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight font-['Cantata_One'] font-normal">

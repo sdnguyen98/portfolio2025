@@ -53,7 +53,7 @@ export default function LucyHero() {
     <span
       className={cn(
         "from-primary dark:from-primary bg-gradient-to-r via-rose-400 to-rose-300 bg-clip-text text-transparent dark:via-rose-300 dark:to-red-400",
-        className,
+        className
       )}
     >
       {children}
@@ -61,14 +61,8 @@ export default function LucyHero() {
   );
 
   return (
-    <div
-      ref={heroRef}
-      className="relative w-full overflow-hidden py-16 bg-transparent"
-    >
-      <motion.div
-        className="relative z-10 container mx-auto max-w-7xl"
-        style={{ y: contentY }}
-      >
+    <div ref={heroRef} className="relative w-full overflow-hidden py-16 bg-transparent">
+      <motion.div className="relative z-10 container mx-auto max-w-7xl" style={{ y: contentY }}>
         <div className="grid items-center gap-16 md:grid-cols-2">
           <motion.div
             variants={{
@@ -102,13 +96,30 @@ export default function LucyHero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="text-foreground mb-8 text-lg leading-relaxed"
+              className="text-foreground mb-8 text-base md:text-lg leading-relaxed space-y-3"
             >
-               Hello my name is <GradientText>Steven Nguyen</GradientText> I'm a Software Developer with hands-on experience building and maintaining web applications, digital platforms, and automated solutions.
-               Adept at translating complex requirements into scalable, maintainable code. Known for strong team leadership, Agile collaboration,
-               and a focus on performance, accessibility, and end-user experience
-            </motion.p>
+              <span className="block">
+                Hi, I'm <GradientText>Steven Nguyen</GradientText>
+              </span>
 
+              <span className="block">
+                I'm a proud Oregon State University alum and a Software Developer based in Portland.
+                I love building web applications, digital platforms, and tools that make life easier
+                for users.
+              </span>
+
+              <span className="block">
+                What excites me most is turning complex ideas into clean, scalable solutions.
+                Whether it's improving performance, enhancing accessibility, or crafting a smooth
+                user experience, I'm always focused on creating software that truly works for
+                people.
+              </span>
+
+              <span className="block">
+                When I'm not coding, you can usually find me exploring new tech, learning something
+                new, traveling, or playing my electric guitar.
+              </span>
+            </motion.p>
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -116,7 +127,6 @@ export default function LucyHero() {
               }}
               className="flex flex-wrap justify-center gap-4 md:justify-start"
             >
-
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -131,8 +141,6 @@ export default function LucyHero() {
                 </Button>
               </motion.div>
             </motion.div>
-
-
           </motion.div>
 
           <motion.div
@@ -186,9 +194,7 @@ export default function LucyHero() {
               <PhoneMockup
                 imageUrl="/media/steven_icon.jpg"
                 alt="Steven profile"
-                glowColor={
-                  isDark ? "rgba(229, 62, 62, 0.5)" : "rgba(229, 62, 62, 0.25)"
-                }
+                glowColor={isDark ? "rgba(229, 62, 62, 0.5)" : "rgba(229, 62, 62, 0.25)"}
                 className="max-w-[380px]"
               />
             </motion.div>

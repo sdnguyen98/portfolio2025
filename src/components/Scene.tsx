@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import useWindow from './useWindow';
+import React, { useEffect, useRef, useState } from "react";
+import useWindow from "./useWindow";
 
 export default function Scene() {
   const { dimension } = useWindow();
@@ -14,11 +14,7 @@ export default function Scene() {
 
   useEffect(() => {
     // Define an array of colors to cycle through
-    const colors = [
-      "rgba(205, 4, 255, 0.13)",
-      "rgba(255, 205, 4, 0.13)",
-      "rgba(4, 63, 255, 0.13)"
-    ];
+    const colors = ["rgba(205, 4, 255, 0.13)", "rgba(255, 205, 4, 0.13)", "rgba(4, 63, 255, 0.13)"];
 
     // Set up a timer to change the color every 10 seconds
     const interval = setInterval(() => {
@@ -33,7 +29,7 @@ export default function Scene() {
   }, []);
 
   const init = () => {
-    const ctx = canvas.current.getContext('2d');
+    const ctx = canvas.current.getContext("2d");
   };
 
   const prevPosition = useRef(null);

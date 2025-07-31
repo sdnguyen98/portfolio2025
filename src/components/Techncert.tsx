@@ -13,35 +13,46 @@ interface Certification {
 }
 
 const skills: Skill[] = [
-  { name: "JavaScript" }, { name: "TypeScript" }, { name: "Python" },
-  { name: "HTML" }, { name: "CSS" }, { name: "SQL" }, { name: "Bash" },
-  { name: "React" }, { name: "React Native" }, { name: "Node.js" },
-  { name: "Express" }, { name: "Next.js" },
-  { name: "Azure DevOps" }, { name: "GitHub" }, { name: "Docker" },
-  { name: "PostgreSQL" }, { name: "MySQL" }, { name: "MongoDB" },
-  { name: "Drupal 7/9" }, { name: "WordPress" }
+  { name: "JavaScript" },
+  { name: "TypeScript" },
+  { name: "Python" },
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "SQL" },
+  { name: "Bash" },
+  { name: "React" },
+  { name: "React Native" },
+  { name: "Node.js" },
+  { name: "Express" },
+  { name: "Next.js" },
+  { name: "Azure DevOps" },
+  { name: "GitHub" },
+  { name: "Docker" },
+  { name: "PostgreSQL" },
+  { name: "MySQL" },
+  { name: "MongoDB" },
+  { name: "Drupal 7/9" },
+  { name: "WordPress" },
 ];
 
 const certifications: Certification[] = [
   {
     title: "Generative AI with Large Language Models",
     issuer: "DeepLearning.AI & Amazon Web Services",
-    year: 2025
-  }
+    year: 2025,
+  },
 ];
 
 const Techncert: React.FC = () => {
   return (
     <section className="w-full max-w-[1200px] mx-auto px-4 py-12 md:py-16">
-      
       {/* Section title */}
       <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center">
         Skills & Certifications
       </h2>
-      
+
       {/* Grid container for side-by-side layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-        
         {/* Tech Stack Card */}
         <Card className="border border-gray-200 dark:border-gray-800">
           <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-gray-200 dark:border-gray-800">
@@ -75,9 +86,7 @@ const Techncert: React.FC = () => {
                   whileHover={{ x: 5 }}
                   className="bg-black/5 dark:bg-white/5 backdrop-blur-sm rounded-lg p-5 border border-gray-200/20 dark:border-gray-700/20"
                 >
-                  <span className="block font-semibold text-foreground text-lg">
-                    {cert.title}
-                  </span>
+                  <span className="block font-semibold text-foreground text-lg">{cert.title}</span>
                   <span className="text-muted-foreground">
                     {cert.issuer} – {cert.year}
                   </span>
@@ -86,9 +95,7 @@ const Techncert: React.FC = () => {
             </ul>
           </CardContent>
         </Card>
-        
       </div>
-
     </section>
   );
 };

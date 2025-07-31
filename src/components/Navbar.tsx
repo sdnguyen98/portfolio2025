@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkIfMobile();
     window.addEventListener("resize", checkIfMobile);
     return () => window.removeEventListener("resize", checkIfMobile);
@@ -19,16 +19,16 @@ const Navbar: React.FC = () => {
 
   const menuSlide = {
     initial: {
-      x: "100%"
+      x: "100%",
     },
     enter: {
       x: "0%",
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
       x: "100%",
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
-    }
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    },
   };
 
   return (
@@ -40,27 +40,25 @@ const Navbar: React.FC = () => {
       >
         {isVisible ? <IoCloseOutline size={32} /> : <IoReorderThreeOutline size={32} />}
       </motion.button>
-      
+
       <AnimatePresence>
         {isVisible && (
           <motion.ul
             variants={menuSlide}
-            initial="initial" 
-            animate="enter" 
+            initial="initial"
+            animate="enter"
             exit="exit"
             className={`fixed top-0 h-screen bg-black/70 backdrop-blur-md flex flex-col justify-center
-                        ${isMobile 
-                          ? 'left-0 right-0 w-full items-center px-6' 
-                          : 'right-0 w-full max-w-sm md:max-w-md items-start pl-16'}`}
+                        ${
+                          isMobile
+                            ? "left-0 right-0 w-full items-center px-6"
+                            : "right-0 w-full max-w-sm md:max-w-md items-start pl-16"
+                        }`}
           >
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About" />
             <NavLink href="/about#Projects" label="Projects" />
-            <NavLink 
-              href="/media/resume.pdf" 
-              label="Resume" 
-              external={true} 
-            />
+            <NavLink href="/media/resume.pdf" label="Resume" external={true} />
           </motion.ul>
         )}
       </AnimatePresence>
@@ -68,13 +66,13 @@ const Navbar: React.FC = () => {
   );
 };
 
-const NavLink = ({ 
-  href, 
-  label, 
-  external = false 
-}: { 
-  href: string; 
-  label: string; 
+const NavLink = ({
+  href,
+  label,
+  external = false,
+}: {
+  href: string;
+  label: string;
   external?: boolean;
 }) => {
   return (
@@ -85,7 +83,7 @@ const NavLink = ({
       transition={{ duration: 0.3 }}
       className="my-8"
     >
-      <a 
+      <a
         href={href}
         className="text-4xl md:text-5xl text-white font-normal relative overflow-hidden group hover:text-gray-300 transition-colors"
         target={external ? "_blank" : undefined}

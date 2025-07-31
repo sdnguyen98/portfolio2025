@@ -30,22 +30,12 @@ const App: React.FC = () => {
     }
   }, []);
 
-
   return (
     <div id="app-container">
       <Router>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              isLoading ? (
-                <LoadingScreen />
-              ) : (
-                <Home />
-              )
-            }
-          />
+          <Route path="/" element={isLoading ? <LoadingScreen /> : <Home />} />
           <Route
             path="/projects"
             element={
