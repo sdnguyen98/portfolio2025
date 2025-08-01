@@ -4,6 +4,8 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 interface Skill {
   name: string;
+  icon: string;
+  color: string;
 }
 
 interface Certification {
@@ -13,26 +15,22 @@ interface Certification {
 }
 
 const skills: Skill[] = [
-  { name: "JavaScript" },
-  { name: "TypeScript" },
-  { name: "Python" },
-  { name: "HTML" },
-  { name: "CSS" },
-  { name: "SQL" },
-  { name: "Bash" },
-  { name: "React" },
-  { name: "React Native" },
-  { name: "Node.js" },
-  { name: "Express" },
-  { name: "Next.js" },
-  { name: "Azure DevOps" },
-  { name: "GitHub" },
-  { name: "Docker" },
-  { name: "PostgreSQL" },
-  { name: "MySQL" },
-  { name: "MongoDB" },
-  { name: "Drupal 7/9" },
-  { name: "WordPress" },
+  { name: "JavaScript", icon: "🟨", color: "bg-yellow-100 border-yellow-300" },
+  { name: "TypeScript", icon: "🔷", color: "bg-blue-100 border-blue-300" },
+  { name: "Python", icon: "🐍", color: "bg-green-100 border-green-300" },
+  { name: "HTML", icon: "🟧", color: "bg-orange-100 border-orange-300" },
+  { name: "CSS", icon: "🎨", color: "bg-blue-100 border-blue-300" },
+  { name: "React", icon: "⚛️", color: "bg-cyan-100 border-cyan-300" },
+  { name: "Node.js", icon: "🟢", color: "bg-green-100 border-green-300" },
+  { name: "Next.js", icon: "▲", color: "bg-gray-100 border-gray-300" },
+  { name: "Express", icon: "🚀", color: "bg-gray-100 border-gray-300" },
+  { name: "PostgreSQL", icon: "🐘", color: "bg-blue-100 border-blue-300" },
+  { name: "MongoDB", icon: "🍃", color: "bg-green-100 border-green-300" },
+  { name: "Docker", icon: "🐳", color: "bg-blue-100 border-blue-300" },
+  { name: "GitHub", icon: "🐙", color: "bg-gray-100 border-gray-300" },
+  { name: "Azure DevOps", icon: "☁️", color: "bg-blue-100 border-blue-300" },
+  { name: "WordPress", icon: "📝", color: "bg-blue-100 border-blue-300" },
+  { name: "Drupal", icon: "💧", color: "bg-blue-100 border-blue-300" },
 ];
 
 const certifications: Certification[] = [
@@ -56,17 +54,18 @@ const Techncert: React.FC = () => {
         {/* Tech Stack Card */}
         <Card className="border border-border">
           <CardTitle className="p-5 text-xl md:text-2xl text-center border-b border-border">
-            Tech Stack
+            Skills & Technologies
           </CardTitle>
           <CardContent className="p-6 md:p-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-background/20 backdrop-blur-sm text-foreground px-4 py-2 rounded-full text-center text-sm md:text-base font-medium border border-border shadow-sm"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className={`${skill.color} p-4 rounded-lg border-2 flex flex-col items-center justify-center text-center transition-all duration-200 hover:shadow-md`}
                 >
-                  {skill.name}
+                  <div className="text-3xl mb-2">{skill.icon}</div>
+                  <span className="text-sm font-medium text-gray-700">{skill.name}</span>
                 </motion.div>
               ))}
             </div>
