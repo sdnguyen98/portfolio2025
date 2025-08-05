@@ -61,9 +61,9 @@ export default function LucyHero() {
   );
 
   return (
-    <div ref={heroRef} className="relative w-full overflow-hidden py-16 bg-transparent">
-      <motion.div className="relative z-10 container mx-auto max-w-7xl" style={{ y: contentY }}>
-        <div className="grid items-center gap-16 md:grid-cols-2">
+    <div ref={heroRef} className="relative w-full overflow-hidden py-8 sm:py-12 md:py-16 bg-transparent">
+      <motion.div className="relative z-10 container mx-auto max-w-7xl px-2 sm:px-4" style={{ y: contentY }}>
+        <div className="grid items-center gap-8 sm:gap-12 md:gap-16 md:grid-cols-2">
           <motion.div
             variants={{
               hidden: { opacity: 0, x: -50 },
@@ -86,7 +86,7 @@ export default function LucyHero() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <h2 className="text-foreground mb-6 text-4xl leading-tight font-bold tracking-tight md:text-5xl lg:text-6xl">
+              <h2 className="text-foreground mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-bold tracking-tight">
                 About Me
               </h2>
             </motion.div>
@@ -96,7 +96,7 @@ export default function LucyHero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="text-foreground mb-8 text-base md:text-lg leading-relaxed space-y-3"
+              className="text-foreground mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed space-y-2 sm:space-y-3"
             >
               <span className="block">
                 Hi, I'm <GradientText>Steven Nguyen</GradientText>
@@ -125,7 +125,7 @@ export default function LucyHero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="flex flex-wrap justify-center gap-4 md:justify-start"
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:justify-start"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -135,7 +135,7 @@ export default function LucyHero() {
                 <div className="bg-background/50 absolute inset-0 -z-10 rounded-full backdrop-blur-sm"></div>
                 <Button
                   variant="outline"
-                  className="border-primary/20 hover:border-primary/30 hover:bg-primary/5 rounded-full backdrop-blur-sm transition-all duration-300"
+                  className="border-primary/20 hover:border-primary/30 hover:bg-primary/5 rounded-full backdrop-blur-sm transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
                 >
                   Contact Info
                 </Button>
@@ -195,7 +195,7 @@ export default function LucyHero() {
                 imageUrl="/media/steven_icon.jpg"
                 alt="Steven profile"
                 glowColor={isDark ? "rgba(229, 62, 62, 0.5)" : "rgba(229, 62, 62, 0.25)"}
-                className="max-w-[380px]"
+                className="max-w-[280px] sm:max-w-[320px] md:max-w-[380px]"
               />
             </motion.div>
           </motion.div>

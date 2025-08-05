@@ -3,11 +3,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Add your custom screens here */
+  --breakpoint-xs: 370px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Your existing color variables */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -118,4 +127,18 @@
   body {
     /* @apply bg-background text-foreground; */
   }
+}
+
+/* Custom screen utilities for max-width */
+@media (max-width: 640px) {
+  .max-sm\:block {
+    display: block;
+  }
+  .max-sm\:hidden {
+    display: none;
+  }
+  .max-sm\:text-sm {
+    font-size: 0.875rem;
+  }
+  /* Add other utilities you need for mobile-first design */
 }

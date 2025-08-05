@@ -49,11 +49,10 @@ const Navbar: React.FC = () => {
             animate="enter"
             exit="exit"
             className={`fixed top-0 h-screen bg-black/70 backdrop-blur-md flex flex-col justify-center
-                        ${
-                          isMobile
-                            ? "left-0 right-0 w-full items-center px-6"
-                            : "right-0 w-full max-w-sm md:max-w-md items-start pl-16"
-                        }`}
+                        ${isMobile
+                ? "left-0 right-0 w-full items-center px-6"
+                : "right-0 w-full max-w-sm md:max-w-md items-start pl-16"
+              }`}
           >
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About" />
