@@ -283,6 +283,7 @@ export function AppleCardsCarousel({
     <div className={className}>
       {title && (
         <h2 className="max-w-7xl pl-4 mx-auto text-foreground text-xl md:text-5xl font-bold dark:text-foreground font-sans">
+          <a id="Projects"></a>
           {title}
         </h2>
       )}
