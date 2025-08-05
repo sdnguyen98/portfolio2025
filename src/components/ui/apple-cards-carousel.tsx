@@ -3,11 +3,18 @@ import React, { useEffect, useRef, useState, createContext, useContext } from "r
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt: string;
+  fill?: boolean;
+  width?: number | string;
+  height?: number | string;
+}
+
 interface CarouselProps {
-  items: JSX.Element[];
+  items: React.ReactElement[];
   initialScroll?: number;
 }
 
@@ -22,7 +29,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -255,23 +262,23 @@ export const Card = ({
   );
 };
 
-export const BlurImage = ({ height, width, src, className, alt, ...rest }: ImageProps) => {
+export const BlurImage = ({ height, width, src, className, alt, fill, ...rest }: ImageProps) => {
   const [isLoading, setLoading] = useState(true);
+
   return (
     <img
       className={cn(
-        "h-full w-full transition duration-300",
+        "transition duration-300",
+        fill ? "absolute inset-0 w-full h-full object-cover" : "",
         isLoading ? "blur-sm" : "blur-0",
         className
       )}
       onLoad={() => setLoading(false)}
-      src={src as string}
-      width={width}
-      height={height}
+      src={src}
+      width={!fill ? width : undefined}
+      height={!fill ? height : undefined}
       loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
+      alt={alt || "Background of a beautiful view"}
       {...rest}
     />
   );

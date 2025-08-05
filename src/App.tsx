@@ -6,10 +6,6 @@ import "./App.css";
 import "./global.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Experience from "./pages/Experience";
-import Education from "./pages/Education";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import PageTransition from "./components/PageTransition";
@@ -42,14 +38,6 @@ const App: React.FC = () => {
           ) : (
             <Routes key="routes">
               <Route path="/" element={<Home />} />
-              <Route
-                path="/projects"
-                element={
-                  <PageTransition>
-                    <Projects />
-                  </PageTransition>
-                }
-              />
               <Route
                 path="/about"
                 element={
