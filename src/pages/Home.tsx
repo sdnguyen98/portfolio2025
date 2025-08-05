@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Scene from "../components/Scene";
-import AboutTxt from "../components/AboutTxt";
+import LandingPageTxt from "../components/LandingPageTxt";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <AboutTxt />
+      <LandingPageTxt />
       <Scene />
     </motion.div>
   );

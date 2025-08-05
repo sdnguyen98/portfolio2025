@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import PhoneMockup from "@/components/ui/phone-mockup";
 import { useTheme } from "next-themes";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Mail, Github, Linkedin } from "lucide-react";
 
 export default function LucyHero() {
   const { theme } = useTheme();
@@ -31,6 +31,7 @@ export default function LucyHero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   const [isHovered, setIsHovered] = useState(false);
+  const [showContactIcons, setShowContactIcons] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -52,13 +53,34 @@ export default function LucyHero() {
   }) => (
     <span
       className={cn(
-        "from-primary dark:from-primary bg-gradient-to-r via-rose-400 to-rose-300 bg-clip-text text-transparent dark:via-rose-300 dark:to-red-400",
+        "transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent cursor-pointer",
         className
       )}
     >
       {children}
     </span>
   );
+
+  const contactIcons = [
+    {
+      icon: Mail,
+      href: "mailto:sdnguyen98@gmail.com",
+      label: "Email",
+      color: "hover:text-blue-500"
+    },
+    {
+      icon: Github,
+      href: "https://github.com/sdnguyen98",
+      label: "GitHub",
+      color: "hover:text-gray-600 dark:hover:text-gray-300"
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/stevendnguyen",
+      label: "LinkedIn",
+      color: "hover:text-blue-600"
+    }
+  ];
 
   return (
     <div ref={heroRef} className="relative w-full overflow-hidden py-8 sm:py-12 md:py-16 bg-transparent">
@@ -125,7 +147,7 @@ export default function LucyHero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:justify-start"
+              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:justify-start"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -136,9 +158,59 @@ export default function LucyHero() {
                 <Button
                   variant="outline"
                   className="border-primary/20 hover:border-primary/30 hover:bg-primary/5 rounded-full backdrop-blur-sm transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
+                  onClick={() => setShowContactIcons(!showContactIcons)}
                 >
                   Contact Info
                 </Button>
+              </motion.div>
+
+              {/* Contact Icons */}
+              <motion.div
+                className="flex items-center gap-2"
+                initial="hidden"
+                animate={showContactIcons ? "visible" : "hidden"}
+              >
+                {contactIcons.map((contact, index) => {
+                  const IconComponent = contact.icon;
+                  return (
+                    <motion.a
+                      key={contact.label}
+                      href={contact.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        "p-2 rounded-full bg-background/50 backdrop-blur-sm border border-primary/20 transition-all duration-300",
+                        contact.color
+                      )}
+                      variants={{
+                        hidden: {
+                          opacity: 0,
+                          scale: 0,
+                          rotate: -180,
+                          x: -20,
+                        },
+                        visible: {
+                          opacity: 1,
+                          scale: 1,
+                          rotate: 0,
+                          x: 0,
+                          transition: {
+                            delay: index * 0.1,
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 15,
+                          },
+                        },
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </motion.a>
+                  );
+                })}
               </motion.div>
             </motion.div>
           </motion.div>
