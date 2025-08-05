@@ -1,4 +1,4 @@
-const AboutTxt = () => {
+const LandingPageTxt = () => {
   return (
     <>
       {/* Image above name tag */}
@@ -23,4 +23,4 @@ const AboutTxt = () => {
   );
 };
 
-export default AboutTxt;
+export default LandingPageTxt;
