@@ -9,7 +9,7 @@ const LandingPageTxt = () => {
       />
 
       {/* Name tag below image */}
-      <div className="p-2 md:p-6 absolute pointer-events-none z-20 text-center md:text-left top-[70%] md:top-[60%] w-full px-4 md:px-0 md:w-auto">
+      <div className="p-2 md:p-6 absolute pointer-events-none z-20 text-center md:text-left top-[60%] md:top-[60%] w-full px-4 md:px-0 md:w-auto">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight font-['Cantata_One'] font-normal">
           Steven Nguyen
         </h1>
