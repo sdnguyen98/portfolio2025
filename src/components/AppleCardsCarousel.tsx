@@ -201,7 +201,7 @@ const SpotifyQuizContent = () => (
 const GymReservationContent = () => (
   <div className="bg-card/90 backdrop-blur-sm p-6 md:p-10 rounded-3xl mb-4 border border-border/30">
     <p className="text-card-foreground text-base md:text-xl font-sans max-w-3xl mx-auto mb-6">
-      <span className="font-bold text-primary">Gym Reservation System</span> A Python-based automation tool that streamlines the process of booking high-demand gym reservations.
+      A Python-based automation tool that streamlines the process of booking high-demand gym reservations.
       The bot securely handles authentication, navigates scheduling workflows, and submits forms without manual input.
     </p>
     <div className="flex flex-wrap gap-3 mb-6">
