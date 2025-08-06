@@ -18,7 +18,7 @@ const WorkTimeline = () => {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <TimelineDescription>Feb 2023 - Present</TimelineDescription>
+          <TimelineDescription>Mar 2023 - Present</TimelineDescription>
           <TimelineTitle>Freelance Software Developer</TimelineTitle>
         </TimelineContent>
       </TimelineItem>
@@ -29,7 +29,7 @@ const WorkTimeline = () => {
         </TimelineSeparator>
         <TimelineContent>
           <TimelineDescription>Jun 2022 - Feb 2023</TimelineDescription>
-          <TimelineTitle>Web Support Specialist Lead (Web Developer Lead)</TimelineTitle>
+          <TimelineTitle>Web Developer Lead</TimelineTitle>
           <TimelineDescription>Oregon State University COE</TimelineDescription>
         </TimelineContent>
       </TimelineItem>
@@ -40,7 +40,7 @@ const WorkTimeline = () => {
         </TimelineSeparator>
         <TimelineContent>
           <TimelineDescription>Mar 2021 - Jun 2022</TimelineDescription>
-          <TimelineTitle>Web Support Assistant Lead</TimelineTitle>
+          <TimelineTitle>Web Developer</TimelineTitle>
           <TimelineDescription>Oregon State University COE</TimelineDescription>
         </TimelineContent>
       </TimelineItem>
