@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About" />
             <NavLink href="/about#Projects" label="Projects" />
-            <NavLink href="/media/resume.pdf" label="Resume" external={true} />
+            <NavLink href="/media/Steven_Nguyen_Resume.pdf" label="Resume" external={true} />
           </motion.ul>
         )}
       </AnimatePresence>
