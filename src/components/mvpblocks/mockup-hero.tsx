@@ -76,7 +76,7 @@ export default function LucyHero() {
     },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/stevendnguyen",
+      href: "https://www.linkedin.com/in/stevenduynguyen",
       label: "LinkedIn",
       color: "hover:text-blue-600"
     }
